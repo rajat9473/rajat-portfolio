@@ -2,9 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Rajat Chitransh | Portfolio</title>
+
+  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- ================= CSS ================= -->
   <style>
     * {
       margin: 0;
@@ -13,27 +17,24 @@
       font-family: 'Poppins', sans-serif;
     }
 
-    body {
-      background: linear-gradient(135deg, #667eea, #764ba2);
-      color: #fff;
+    html {
       scroll-behavior: smooth;
     }
 
-    section {
-      padding: 80px 10%;
-      animation: fadeUp 1s ease forwards;
+    body {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: #ffffff;
+      overflow-x: hidden;
     }
 
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(40px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
+    /* ================= HERO ================= */
     .hero {
       height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
+      padding: 0 10%;
     }
 
     .hero h1 {
@@ -46,107 +47,199 @@
     }
 
     .hero p {
-      margin: 15px 0;
+      margin-top: 15px;
+      max-width: 650px;
       font-size: 1.2rem;
-      max-width: 600px;
+      line-height: 1.6;
     }
 
+    /* ================= BUTTONS ================= */
     .btns a {
       display: inline-block;
+      margin-top: 25px;
       margin-right: 15px;
-      margin-top: 20px;
-      padding: 12px 24px;
+      padding: 12px 28px;
       background: #ffd86f;
       color: #000;
       border-radius: 30px;
       text-decoration: none;
       font-weight: 600;
-      transition: transform 0.3s, box-shadow 0.3s;
+      transition: all 0.3s ease;
     }
 
     .btns a:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+      transform: translateY(-6px) scale(1.05);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.3);
     }
 
+    /* ================= SECTIONS ================= */
+    section {
+      padding: 80px 10%;
+    }
+
+    .about,
+    .skills,
+    .projects,
+    .experience,
+    .education,
+    .contact {
+      background: rgba(255,255,255,0.12);
+      border-radius: 22px;
+      margin-bottom: 50px;
+      backdrop-filter: blur(8px);
+    }
+
+    /* ================= HEADINGS ================= */
     h2 {
       font-size: 2.4rem;
       margin-bottom: 30px;
       color: #ffd86f;
     }
 
-    .about, .skills, .projects, .experience, .education, .contact {
-      background: rgba(255,255,255,0.1);
-      border-radius: 20px;
-      margin-bottom: 40px;
-    }
-
+    /* ================= SKILLS ================= */
     .skills-list span {
       display: inline-block;
-      background: rgba(0,0,0,0.3);
       margin: 8px;
-      padding: 10px 18px;
-      border-radius: 20px;
-      font-size: 0.9rem;
+      padding: 10px 20px;
+      background: rgba(0,0,0,0.35);
+      border-radius: 25px;
+      font-size: 0.95rem;
+      transition: transform 0.3s ease;
     }
 
+    .skills-list span:hover {
+      transform: translateY(-4px);
+    }
+
+    /* ================= PROJECTS ================= */
     .project {
-      margin-bottom: 20px;
+      margin-bottom: 22px;
+      padding: 20px;
+      border-radius: 16px;
+      background: rgba(0,0,0,0.25);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .project:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.4);
     }
 
     .project h3 {
-      color: #fff;
-      margin-bottom: 5px;
+      margin-bottom: 8px;
     }
 
+    /* ================= CONTACT ================= */
     .contact a {
       color: #ffd86f;
       text-decoration: none;
       font-weight: 600;
     }
 
+    /* ================= FOOTER ================= */
     footer {
       text-align: center;
-      padding: 20px;
+      padding: 25px;
+      opacity: 0.85;
       font-size: 0.9rem;
-      opacity: 0.8;
     }
 
-    @media(max-width: 768px) {
+    /* ================= SCROLL ANIMATIONS ================= */
+    .reveal {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: all 0.8s ease;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ================= PARTICLES ================= */
+    .particles {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      overflow: hidden;
+    }
+
+    .particles::before,
+    .particles::after {
+      content: "";
+      position: absolute;
+      width: 380px;
+      height: 380px;
+      background: radial-gradient(circle, rgba(255,216,111,0.55), transparent 65%);
+      animation: float 15s infinite alternate ease-in-out;
+    }
+
+    .particles::before {
+      top: 8%;
+      left: 6%;
+    }
+
+    .particles::after {
+      bottom: 10%;
+      right: 10%;
+      animation-duration: 20s;
+    }
+
+    @keyframes float {
+      from {
+        transform: translate(0, 0);
+      }
+      to {
+        transform: translate(120px, -100px);
+      }
+    }
+
+    /* ================= RESPONSIVE ================= */
+    @media (max-width: 768px) {
       .hero h1 {
         font-size: 2.2rem;
+      }
+
+      section {
+        padding: 60px 6%;
+      }
+
+      h2 {
+        font-size: 2rem;
       }
     }
   </style>
 </head>
 <body>
 
+  <!-- FLOATING PARTICLES -->
+  <div class="particles"></div>
+
   <!-- HERO -->
   <section class="hero">
     <h1>Hi, I'm <span>Rajat Chitransh</span></h1>
     <p>
-      Computer Science & Engineering student passionate about Web Development,
-      Backend Systems, and AI-powered applications.
+      Computer Science & Engineering graduate passionate about Full Stack Web
+      Development, Backend Systems, and AI-powered applications.
     </p>
     <div class="btns">
-      <a href="https://github.com/rajat9473" target="_blank">GitHub</a>
-      <a href="https://www.linkedin.com/in/rajat-chitransh95" target="_blank">LinkedIn</a>
+      <a href="https://github.com/YOUR_GITHUB_USERNAME" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com/in/YOUR_LINKEDIN_USERNAME" target="_blank">LinkedIn</a>
     </div>
   </section>
 
   <!-- ABOUT -->
-  <section class="about">
+  <section class="about reveal">
     <h2>About Me</h2>
     <p>
-      I am a Computer Science and Engineering graduate with strong skills in full-stack
-      web development and backend engineering. I enjoy building scalable applications,
-      solving real-world problems, and working with modern technologies such as Spring,
-      MERN stack, and AI/ML systems.
+      I am a Computer Science and Engineering graduate with hands-on experience
+      in building scalable web applications, backend systems, and AI-based
+      solutions using modern technologies.
     </p>
   </section>
 
   <!-- SKILLS -->
-  <section class="skills">
+  <section class="skills reveal">
     <h2>Skills</h2>
     <div class="skills-list">
       <span>HTML</span><span>CSS</span><span>JavaScript</span>
@@ -160,61 +253,101 @@
   </section>
 
   <!-- PROJECTS -->
-  <section class="projects">
+  <section class="projects reveal">
     <h2>Projects</h2>
 
     <div class="project">
       <h3>AI Resume Builder & Analyzer</h3>
-      <p>Built a full-stack AI application using React, Express, MongoDB, and Hugging Face to analyze resumes and provide smart feedback.</p>
+      <p>
+        Developed a full-stack AI application using React, Express, MongoDB,
+        and Hugging Face APIs to analyze resumes and provide intelligent feedback.
+      </p>
     </div>
 
     <div class="project">
       <h3>Pneumonia Detector Using CNN</h3>
-      <p>Developed a deep learning model to detect pneumonia from chest X-ray images using CNN architecture.</p>
+      <p>
+        Built a deep learning model using Convolutional Neural Networks to
+        detect pneumonia from chest X-ray images.
+      </p>
     </div>
 
     <div class="project">
       <h3>Secure File Sharing System</h3>
-      <p>Designed a secure REST-based file sharing system with encrypted URLs and role-based access.</p>
+      <p>
+        Designed a secure REST-based file sharing system with encrypted URLs
+        and role-based access control.
+      </p>
     </div>
 
     <div class="project">
       <h3>Peer-to-Peer Lending Platform</h3>
-      <p>Created a lending platform using Spring Boot and MySQL with authentication and transaction handling.</p>
+      <p>
+        Developed a peer-to-peer lending platform using Spring Boot and MySQL
+        with authentication and transaction handling.
+      </p>
     </div>
   </section>
 
   <!-- EXPERIENCE -->
-  <section class="experience">
+  <section class="experience reveal">
     <h2>Internship</h2>
     <p>
       <strong>Web Development Intern – Prodigy InfoTech</strong><br>
-      Worked on developing responsive web applications, implementing frontend features,
-      backend logic, debugging issues, and collaborating in an agile environment.
+      Worked on developing responsive web applications, implementing frontend
+      and backend features, debugging issues, and collaborating in an agile
+      development environment.
     </p>
   </section>
 
   <!-- EDUCATION -->
-  <section class="education">
+  <section class="education reveal">
     <h2>Education</h2>
     <p>
       <strong>B.Tech – Computer Science & Engineering</strong><br>
-      Focused on software engineering, data structures, databases, networking,
-      and artificial intelligence.
+      Focused on software engineering, databases, computer networks, and
+      artificial intelligence.
     </p>
   </section>
 
   <!-- CONTACT -->
-  <section class="contact">
+  <section class="contact reveal">
     <h2>Contact</h2>
     <p>Email: <strong>rajatchitransh02@gmail.com</strong></p>
-    <p>GitHub: <a href="https://github.com/YOUR_GITHUB_USERNAME" target="_blank">View Profile</a></p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/YOUR_LINKEDIN_USERNAME" target="_blank">View Profile</a></p>
+    <p>
+      GitHub:
+      <a href="https://github.com/rajat9473" target="_blank">
+        View Profile
+      </a>
+    </p>
+    <p>
+      LinkedIn:
+      <a href="https://www.linkedin.com/in/rajat-chitransh95" target="_blank">
+        View Profile
+      </a>
+    </p>
   </section>
 
   <footer>
     © 2026 Rajat Chitransh | Portfolio
   </footer>
+
+  <!-- ================= JS (SCROLL ANIMATION) ================= -->
+  <script>
+    const revealSections = document.querySelectorAll(".reveal");
+
+    window.addEventListener("scroll", () => {
+      revealSections.forEach(section => {
+        const windowHeight = window.innerHeight;
+        const sectionTop = section.getBoundingClientRect().top;
+        const revealPoint = 120;
+
+        if (sectionTop < windowHeight - revealPoint) {
+          section.classList.add("active");
+        }
+      });
+    });
+  </script>
 
 </body>
 </html>
