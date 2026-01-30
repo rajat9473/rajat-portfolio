@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rajat Chitransh | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: #fff;
+      scroll-behavior: smooth;
+    }
+
+    section {
+      padding: 80px 10%;
+      animation: fadeUp 1s ease forwards;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .hero h1 {
+      font-size: 3.2rem;
+      font-weight: 700;
+    }
+
+    .hero span {
+      color: #ffd86f;
+    }
+
+    .hero p {
+      margin: 15px 0;
+      font-size: 1.2rem;
+      max-width: 600px;
+    }
+
+    .btns a {
+      display: inline-block;
+      margin-right: 15px;
+      margin-top: 20px;
+      padding: 12px 24px;
+      background: #ffd86f;
+      color: #000;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .btns a:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    }
+
+    h2 {
+      font-size: 2.4rem;
+      margin-bottom: 30px;
+      color: #ffd86f;
+    }
+
+    .about, .skills, .projects, .experience, .education, .contact {
+      background: rgba(255,255,255,0.1);
+      border-radius: 20px;
+      margin-bottom: 40px;
+    }
+
+    .skills-list span {
+      display: inline-block;
+      background: rgba(0,0,0,0.3);
+      margin: 8px;
+      padding: 10px 18px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+    }
+
+    .project {
+      margin-bottom: 20px;
+    }
+
+    .project h3 {
+      color: #fff;
+      margin-bottom: 5px;
+    }
+
+    .contact a {
+      color: #ffd86f;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+
+    @media(max-width: 768px) {
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Hi, I'm <span>Rajat Chitransh</span></h1>
+    <p>
+      Computer Science & Engineering student passionate about Web Development,
+      Backend Systems, and AI-powered applications.
+    </p>
+    <div class="btns">
+      <a href="https://github.com/rajat9473" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com/in/rajat-chitransh95" target="_blank">LinkedIn</a>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about">
+    <h2>About Me</h2>
+    <p>
+      I am a Computer Science and Engineering graduate with strong skills in full-stack
+      web development and backend engineering. I enjoy building scalable applications,
+      solving real-world problems, and working with modern technologies such as Spring,
+      MERN stack, and AI/ML systems.
+    </p>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="skills">
+    <h2>Skills</h2>
+    <div class="skills-list">
+      <span>HTML</span><span>CSS</span><span>JavaScript</span>
+      <span>Java</span><span>Python</span>
+      <span>Spring Boot</span><span>Django</span>
+      <span>React</span><span>Node.js</span>
+      <span>MongoDB</span><span>MySQL</span>
+      <span>Git & GitHub</span>
+      <span>Machine Learning</span>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="projects">
+    <h2>Projects</h2>
+
+    <div class="project">
+      <h3>AI Resume Builder & Analyzer</h3>
+      <p>Built a full-stack AI application using React, Express, MongoDB, and Hugging Face to analyze resumes and provide smart feedback.</p>
+    </div>
+
+    <div class="project">
+      <h3>Pneumonia Detector Using CNN</h3>
+      <p>Developed a deep learning model to detect pneumonia from chest X-ray images using CNN architecture.</p>
+    </div>
+
+    <div class="project">
+      <h3>Secure File Sharing System</h3>
+      <p>Designed a secure REST-based file sharing system with encrypted URLs and role-based access.</p>
+    </div>
+
+    <div class="project">
+      <h3>Peer-to-Peer Lending Platform</h3>
+      <p>Created a lending platform using Spring Boot and MySQL with authentication and transaction handling.</p>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section class="experience">
+    <h2>Internship</h2>
+    <p>
+      <strong>Web Development Intern – Prodigy InfoTech</strong><br>
+      Worked on developing responsive web applications, implementing frontend features,
+      backend logic, debugging issues, and collaborating in an agile environment.
+    </p>
+  </section>
+
+  <!-- EDUCATION -->
+  <section class="education">
+    <h2>Education</h2>
+    <p>
+      <strong>B.Tech – Computer Science & Engineering</strong><br>
+      Focused on software engineering, data structures, databases, networking,
+      and artificial intelligence.
+    </p>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact">
+    <h2>Contact</h2>
+    <p>Email: <strong>rajatchitransh02@gmail.com</strong></p>
+    <p>GitHub: <a href="https://github.com/YOUR_GITHUB_USERNAME" target="_blank">View Profile</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/YOUR_LINKEDIN_USERNAME" target="_blank">View Profile</a></p>
+  </section>
+
+  <footer>
+    © 2026 Rajat Chitransh | Portfolio
+  </footer>
+
+</body>
+</html>
